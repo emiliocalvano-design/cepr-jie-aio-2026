@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>26th CEPR-JIE Conference on Applied Industrial Organization</title>
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--luiss-blue:#003366;--dark-navy:#001020;--body-font:'Arimo','Lucida Grande',helvetica,arial,sans-serif;--serif-font:Georgia,'Times New Roman',Times,serif}
+body{font-family:var(--body-font);font-size:16px;line-height:1.5;color:#000;background:#fff}
+a{color:var(--luiss-blue);text-decoration:none}
+a:hover{text-decoration:underline}
+header{height:100px;padding:24px 0;background:#fff;border-bottom:1px solid #e0e0e0}
+.header-inner{max-width:calc(100% - 64px);margin:0 32px;display:flex;align-items:center;justify-content:space-between;height:100%}
+.org-logos{display:flex;align-items:center;gap:20px}
+.org-logo-text{font-family:var(--serif-font);font-size:22px;font-weight:900;color:var(--luiss-blue);letter-spacing:-0.5px}
+.org-divider{width:1px;height:28px;background:var(--luiss-blue);opacity:0.4}
+.org-partner{font-family:var(--body-font);font-size:12px;font-weight:700;color:var(--luiss-blue);letter-spacing:0.5px;text-transform:uppercase;line-height:1.3}
+.header-nav{display:flex;align-items:center;gap:16px}
+.header-nav button{background:none;border:none;cursor:pointer;color:var(--luiss-blue);padding:4px}
+.content-wrap{max-width:calc(100% - 64px);margin:0 32px}
+.breadcrumb{margin:48px 0 24px;font-size:16px}
+.breadcrumb a{color:#000;text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb-arrow{margin-right:8px;color:#666}
+.page-header{padding:24px 0 0}
+.page-header__title{font-family:var(--serif-font);font-size:49px;font-weight:700;text-align:center;margin-bottom:32px;line-height:1.1;color:#000}
+.share-row{text-align:center;margin-bottom:24px}
+.share-label{font-size:13px;color:#666;margin-right:8px;vertical-align:middle}
+.share-btn{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#727374;color:#fff;margin:0 2px;font-size:12px;text-decoration:none;vertical-align:middle}
+.share-btn:hover{background:#555;text-decoration:none}
+.citation-info{border-top:1px solid #BFC0C1;border-bottom:1px solid #BFC0C1;margin:0 0 32px;padding:32px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;margin-top:32px}
+.citation-item{font-size:16px;text-align:center;line-height:1.5}
+.citation-item strong{font-weight:700}
+.print-agenda-wrap{text-align:center;margin-bottom:5px}
+.print-link{color:var(--luiss-blue);font-size:16px;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.print-link:hover{text-decoration:underline}
+.print-icon{width:16px;height:16px;fill:var(--luiss-blue)}
+.sponsor-banner{background:var(--luiss-blue);padding:32px;margin:48px 0 0;text-align:center}
+.sponsor-banner h2{font-family:var(--serif-font);font-size:30px;font-weight:700;color:#fff;line-height:1.17;margin:0}
+.format-notice{font-size:16px;text-align:center;margin:32px 0;padding:0 16px;color:#000}
+.agenda{margin:0}
+.agenda-day{margin:48px 0}
+.agenda-day__title{font-family:var(--serif-font);font-size:24px;font-weight:700;text-align:center;margin-bottom:24px}
+.session-header{font-size:16px;font-weight:700;color:#c0392b;margin:32px 0 12px 24px;text-transform:none}
+.agenda-entry{margin:0 0 40px 24px}
+.entry-time{font-size:15px;color:#555;margin-bottom:4px;display:block}
+.entry-title-wrapper{display:block;padding:0 0 5px}
+.paper-title{font-family:var(--serif-font);font-size:20px;font-weight:500;color:var(--luiss-blue);text-decoration:none;display:inline}
+.paper-title:hover{text-decoration:underline}
+.paper-authors{display:block;font-size:18px;color:#000;line-height:1.6}
+.author-row{display:block}
+.author-link{color:#000;text-decoration:underline}
+.author-link:hover{color:var(--luiss-blue)}
+.affiliation{color:#000}
+.paper-discussants{padding:20px 0 0}
+.discussant-label{display:block;font-size:18px;color:#000;margin-bottom:2px}
+.discussant-name a{font-size:18px;font-weight:700;color:var(--luiss-blue);text-decoration:none}
+.discussant-name a:hover{text-decoration:underline}
+.discussant-name .affiliation{font-weight:400;color:#000}
+.discussant-tba{font-size:18px;font-style:italic;color:#555}
+.break-entry{margin:0 0 20px 24px;font-size:18px;color:#000}
+.symposium-section{margin-top:64px;padding-top:48px;border-top:3px solid var(--luiss-blue)}
+.symposium-title{font-family:var(--serif-font);font-size:36px;font-weight:700;text-align:center;color:#c0392b;margin-bottom:16px}
+.symposium-committee{font-size:15px;text-align:center;margin-bottom:32px;line-height:1.8}
+.symposium-committee strong{font-weight:700}
+.industry-talk{margin:0 0 40px 24px;background:#fffde7;border-left:4px solid #f9a825;padding:16px}
+.industry-talk-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#f57f17;margin-bottom:4px}
+.industry-talk-title{font-size:18px;font-weight:700;margin-bottom:4px}
+.industry-talk-speaker{font-size:16px;color:#555}
+.related-section{border-top:1px solid #BFC0C1;padding:32px 0;margin-top:32px}
+.related-title{font-family:var(--serif-font);font-size:28px;font-weight:700;margin-bottom:24px}
+.related-row{display:flex;align-items:center;gap:16px;margin-bottom:16px;border-top:1px solid #444;padding-top:12px}
+.related-row-label{font-size:12px;font-weight:700;color:#000;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+.related-row-link{color:var(--luiss-blue);font-size:16px;font-weight:700}
+.subfooter{background:#EFEEF2;padding:48px 0;margin-top:48px}
+.subfooter-inner{max-width:calc(100% - 64px);margin:0 32px}
+.subfooter h2{font-family:var(--serif-font);font-size:28px;font-weight:700;margin-bottom:16px}
+.subfooter p{font-size:16px;line-height:1.6;margin-bottom:24px}
+footer{background:var(--dark-navy);color:#fff;padding:96px 32px 48px;text-align:center}
+footer .footer-org{font-family:var(--serif-font);font-size:18px;font-weight:700;margin-bottom:16px}
+footer .footer-contact a{color:#fff;text-decoration:none}
+footer .footer-contact a:hover{text-decoration:underline}
+footer .footer-links{margin-top:32px;font-size:14px}
+footer .footer-links a{color:#fff;text-decoration:none;margin:0 8px}
+footer .footer-links a:hover{text-decoration:underline}
+.back-to-top{position:fixed;bottom:24px;right:24px;background:var(--luiss-blue);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="org-logos">
+      <span class="org-logo-text">LUISS</span>
+      <div class="org-divider"></div>
+      <span class="org-partner">Journal of Industrial<br>Economics</span>
+      <div class="org-divider"></div>
+      <span class="org-partner">CEPR</span>
+    </div>
+    <div class="header-nav">
+      <button aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="content-wrap">
+    <nav class="breadcrumb">
+      <span class="breadcrumb-arrow">&lt;</span>
+      <a href="https://cepr.org/events">Conferences</a>
+    </nav>
+    <div class="page-header">
+      <h1 class="page-header__title">26th CEPR-JIE Conference on Applied Industrial Organization</h1>
+      <div class="share-row">
+        <span class="share-label">SHARE</span>
+        <a class="share-btn" href="#" title="Share on X" aria-label="Share on X">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.745l7.73-8.835L1.254 2.25H8.08l4.26 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a class="share-btn" href="#" title="Share on LinkedIn" aria-label="Share on LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a class="share-btn" href="#" title="Share on Facebook" aria-label="Share on Facebook">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a class="share-btn" href="#" title="Share via Email" aria-label="Share via Email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+        <a class="share-btn" href="#" title="Copy link" aria-label="Copy link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </a>
+      </div>
+      <div class="citation-info">
+        <div class="citation-item"><strong>DATE</strong> 28&ndash;30 May 2026</div>
+        <div class="citation-item"><strong>LOCATION</strong> LUISS University, Rome, Italy</div>
+        <div class="citation-item"><strong>SCIENTIFIC COMMITTEE</strong> Emilio Calvano, Rosa Ferrer, Panle Jia Barwick, and Andrea Pozzi</div>
+        <div class="citation-item"><strong>ORGANISERS</strong> Pierre Dubois, Emilio Calvano, and Fabiano Schivardi</div>
+      </div>
+      <div class="print-agenda-wrap">
+        <a class="print-link" href="#">
+          <svg class="print-icon" viewBox="0 0 24 24" fill="none" stroke="#003366" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print agenda
+        </a>
+      </div>
+      <div class="sponsor-banner">
+        <h2>Funded by the European Research Council (ERC)</h2>
+      </div>
+      <p class="format-notice">Format: 35 minutes for the authors, 10 minutes for the discussants, 5 minutes for general Q&amp;A</p>
+    </div>
+    <!-- AGENDA -->
+    <div class="agenda">
+      <!-- Thursday 28 May -->
+      <div class="agenda-day">
+        <h3 class="agenda-day__title">Thursday, 28 May 2026</h3>
+        <div class="break-entry">9:00&ndash;9:20 &nbsp; Registration</div>
+
+        <div class="session-header">Session I: Health, Regulation, and Incentives</div>
+
+        <!-- Paper 1 -->
+        <div class="agenda-entry">
+          <span class="entry-time">9:20&ndash;10:10</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">The Measurement and Production of Quality in Long-Term Care Facilities in the US: 2012&ndash;2017</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Matthew Backus</span><span class="affiliation">, University of California, Berkeley &amp; CEPR</span></div>
+            <div class="author-row"><span class="affiliation">Co-authors: Ashley Swanson, Andrew Olenski</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-tba">TBA</div>
+          </div>
+        </div>
+
+        <!-- Paper 2 -->
+        <div class="agenda-entry">
+          <span class="entry-time">10:10&ndash;11:00</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Price Controls with Imperfect Competition and Choice Frictions: Evidence from Indian Pharmaceuticals</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Harsh Gupta</span><span class="affiliation">, London School of Economics</span></div>
+            <div class="author-row"><span class="affiliation">Co-author: Shengmao Cao</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Chiara Gardenghi</span><span class="affiliation">, University of Rochester</span></div>
+          </div>
+        </div>
+
+        <div class="break-entry">11:00&ndash;11:20 &nbsp; Break</div>
+
+        <div class="session-header">Session II: Energy and Environmental Markets</div>
+
+        <!-- Paper 3 -->
+        <div class="agenda-entry">
+          <span class="entry-time">11:20&ndash;12:10</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Prices and Concentration: A U-shape? Theory and Evidence from Renewables</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Michele Fioretti</span><span class="affiliation">, Bocconi University &amp; CEPR</span></div>
+            <div class="author-row"><span class="affiliation">Co-authors: Junnan He, Jorge Tamayo</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Christos Genakos</span><span class="affiliation">, Cambridge University &amp; CEPR</span></div>
+          </div>
+        </div>
+
+        <!-- Paper 4 -->
+        <div class="agenda-entry">
+          <span class="entry-time">12:10&ndash;13:00</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Equilibrium Effects in Complementary Markets: Electric Vehicle Adoption and Electricity Pricing</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Mathias Reynaert</span><span class="affiliation">, Toulouse School of Economics &amp; CEPR</span></div>
+            <div class="author-row"><span class="affiliation">Co-authors: Pascal Heid, Kevin Remmy</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Tianli Xia</span><span class="affiliation">, University of Rochester</span></div>
+          </div>
+        </div>
+
+        <div class="break-entry">13:00&ndash;14:00 &nbsp; Lunch</div>
+
+        <div class="session-header">Session III: Antitrust and Vertical Restraints</div>
+
+        <!-- Paper 5 -->
+        <div class="agenda-entry">
+          <span class="entry-time">14:00&ndash;14:50</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Optimal Merger Remedies</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Volker Nocke</span><span class="affiliation">, University of Mannheim &amp; CEPR</span></div>
+            <div class="author-row"><span class="affiliation">Co-author: Andrew Rhodes</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Emanuele Tarantino</span><span class="affiliation">, European Commission, LUISS University &amp; CEPR</span></div>
+          </div>
+        </div>
+
+        <!-- Paper 6 -->
+        <div class="agenda-entry">
+          <span class="entry-time">14:50&ndash;15:40</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Incapacitating the Competition: The Impact of Vertical Restraints on Technology Adoption</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Michelle Sovinsky</span><span class="affiliation">, University of Mannheim &amp; CEPR</span></div>
+            <div class="author-row"><span class="affiliation">Co-author: Laura Grigolon</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Jaap Abbring</span><span class="affiliation">, Tilburg University &amp; CEPR</span></div>
+          </div>
+        </div>
+
+        <div class="break-entry">15:40&ndash;16:00 &nbsp; Break</div>
+
+        <div class="session-header">Session IV: Digital Platforms and Software</div>
+
+        <!-- Paper 7 -->
+        <div class="agenda-entry">
+          <span class="entry-time">16:00&ndash;16:50</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Self-Selection, Evaluation and Optimal Ordeals</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Marco Ottaviani</span><span class="affiliation">, Bocconi University &amp; CEPR</span></div>
+            <div class="author-row"><span class="affiliation">Co-authors: Nenad Kos</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Doruk Cetemen</span><span class="affiliation">, LUISS University</span></div>
+          </div>
+        </div>
+
+        <!-- Paper 8 -->
+        <div class="agenda-entry">
+          <span class="entry-time">16:50&ndash;17:40</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Open Source Software Policy in Industry Equilibrium</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Jeff Gortmaker</span><span class="affiliation">, Princeton University</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-tba">TBA</div>
+          </div>
+        </div>
+
+        <div class="break-entry" style="font-style:italic;color:#c0392b;">End of day 1</div>
+      </div>
+      <!-- Friday 29 May -->
+      <div class="agenda-day">
+        <h3 class="agenda-day__title">Friday, 29 May 2026</h3>
+
+        <div class="session-header">Session V: Innovation and Incentives</div>
+
+        <!-- Paper 9 -->
+        <div class="agenda-entry">
+          <span class="entry-time">9:20&ndash;10:10</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Gaming the Giants: How Startups Shape Innovation to Spark Acquisition Wars</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Ozlem Bedre</span><span class="affiliation">, European University Institute &amp; CEPR</span></div>
+            <div class="author-row"><span class="affiliation">Co-authors: Gary Biglaiser, Bruno Jullien</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Vincenzo Denicolò</span><span class="affiliation">, University of Bologna</span></div>
+          </div>
+        </div>
+
+        <!-- Paper 10 -->
+        <div class="agenda-entry">
+          <span class="entry-time">10:10&ndash;11:00</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Empirical Contract Design for Multitasking Agents</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Pietro Tebaldi</span><span class="affiliation">, Columbia University</span></div>
+            <div class="author-row"><span class="affiliation">Co-authors: Filippo Paternollo, Andre Veiga</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>L&eacute;a Bignon</span><span class="affiliation">, KU Leuven</span></div>
+          </div>
+        </div>
+
+        <div class="break-entry">11:00&ndash;11:20 &nbsp; Break</div>
+
+        <div class="session-header">Session VI: Retail Markets Regulation</div>
+
+        <!-- Paper 11 -->
+        <div class="agenda-entry">
+          <span class="entry-time">11:20&ndash;12:10</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Price Caps and Coordinated Effects: Evidence from Retail Gasoline</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Simon Martin</span><span class="affiliation">, University of Vienna &amp; CEPR</span></div>
+            <div class="author-row"><span class="affiliation">Co-author: Frank Verboven</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Felix Montag</span><span class="affiliation">, New York University &amp; CEPR</span></div>
+          </div>
+        </div>
+
+        <!-- Paper 12 -->
+        <div class="agenda-entry">
+          <span class="entry-time">12:10&ndash;13:00</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">The Expansion and Dynamic Equilibrium Effects of Institutional Landlords</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Zhichun Wang</span><span class="affiliation">, Yale University</span></div>
+            <div class="author-row"><span class="affiliation">Co-author: Daojing Zhai</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-tba">TBA</div>
+          </div>
+        </div>
+
+        <div class="break-entry">13:00&ndash;14:00 &nbsp; Lunch</div>
+
+        <div class="session-header">Session VII: Finance, Housing, and Industrial Dynamics</div>
+
+        <!-- Paper 13 -->
+        <div class="agenda-entry">
+          <span class="entry-time">14:00&ndash;14:50</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Default Options and Market Power: Evidence from Target-Date Funds</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Marco Loseto</span><span class="affiliation">, Bocconi University</span></div>
+            <div class="author-row"><span class="affiliation">Co-author: Hanbin Yang</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Chuqing Jin</span><span class="affiliation">, Toulouse School of Economics</span></div>
+          </div>
+        </div>
+
+        <!-- Paper 14 -->
+        <div class="agenda-entry">
+          <span class="entry-time">14:50&ndash;15:40</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Bank Deposit Pricing in the Euro Area</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Alessandro Gavazza</span><span class="affiliation">, London School of Economics &amp; CEPR</span></div>
+            <div class="author-row"><span class="affiliation">Co-authors: Ugo Albertazzi, Finn Faber, Oana-Maria Georgescu, Ernest Lecomte</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Jose-Luis Peydro</span><span class="affiliation">, LUISS University &amp; CEPR</span></div>
+          </div>
+        </div>
+
+        <div class="break-entry">15:40&ndash;16:00 &nbsp; Break</div>
+
+        <div class="session-header">Session VIII: Digital Markets and Algorithms</div>
+
+        <!-- Paper 15 -->
+        <div class="agenda-entry">
+          <span class="entry-time">16:00&ndash;16:50</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">The Equilibrium Design of a Third-Party&#39;s Pricing Algorithm</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Joseph Harrington</span><span class="affiliation">, University of Pennsylvania</span></div>
+            <div class="author-row"><span class="affiliation">Co-author: Juan Ortner</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Giacomo Calzolari</span><span class="affiliation">, European University Institute</span></div>
+          </div>
+        </div>
+
+        <!-- Paper 16 -->
+        <div class="agenda-entry">
+          <span class="entry-time">16:50&ndash;17:40</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Algorithmic Pricing, Price Wars and Tacit Collusion: Evidence from E-Commerce</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Leon Musolff</span><span class="affiliation">, University of Pennsylvania</span></div>
+          </div>
+          <div class="paper-discussants">
+            <div class="discussant-label">Discussant:</div>
+            <div class="discussant-name"><span>Emilio Calvano</span><span class="affiliation">, LUISS University &amp; CEPR</span></div>
+          </div>
+        </div>
+
+        <div class="break-entry">19:00 &nbsp; Conference Dinner</div>
+      </div>
+      <!-- Saturday 30 May - AI Symposium -->
+      <div class="agenda-day symposium-section">
+        <div class="symposium-title">AI, Algorithms, and Markets Symposium</div>
+        <div class="symposium-committee">
+          <strong>Scientific Committee</strong><br>
+          Emilio Calvano (LUISS University &amp; CEPR), Aniko Oery (Carnegie Mellon), Kevin Williams (Yale University)<br>
+          <strong>Organiser</strong><br>
+          Emilio Calvano (LUISS University &amp; CEPR)
+        </div>
+
+        <h3 class="agenda-day__title">Saturday, 30 May 2026</h3>
+
+        <!-- Industry Talk -->
+        <div class="industry-talk">
+          <div class="industry-talk-label">Industry Talk</div>
+          <div class="industry-talk-title">TBD</div>
+          <div class="industry-talk-speaker">9:00&ndash;9:45 &nbsp; Speaker: Greg Crawford (Zalando and University of Zurich)</div>
+        </div>
+
+        <div class="break-entry">9:45&ndash;10:00 &nbsp; Break</div>
+
+        <div class="session-header">Session IX: Algorithmic Competition and Collusion</div>
+
+        <!-- Paper 17 -->
+        <div class="agenda-entry">
+          <span class="entry-time">10:00&ndash;10:50</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Collusion with Optimal Information Disclosure</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Alexander Wolitzky</span><span class="affiliation">, Massachusetts Institute of Technology</span></div>
+            <div class="author-row"><span class="affiliation">Co-author: Takuo Sugaya</span></div>
+          </div>
+        </div>
+
+        <!-- Paper 18 -->
+        <div class="agenda-entry">
+          <span class="entry-time">10:50&ndash;11:40</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Algorithmic Coercion with Faster Pricing</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Zach Y. Brown</span><span class="affiliation">, University of Michigan</span></div>
+            <div class="author-row"><span class="affiliation">Co-author: Alexander MacKay</span></div>
+          </div>
+        </div>
+
+        <div class="break-entry">11:40&ndash;12:00 &nbsp; Break</div>
+
+        <div class="session-header">Session X: AI, Platforms, and Market Design</div>
+
+        <!-- Paper 19 -->
+        <div class="agenda-entry">
+          <span class="entry-time">12:00&ndash;12:50</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">The Emerging Market for Intelligence: Pricing, Supply, and Demand for LLMs</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Nadav Tadelis</span><span class="affiliation">, Microsoft</span></div>
+            <div class="author-row"><span class="affiliation">Co-authors: Sida Peng, Mert Demirer</span></div>
+          </div>
+        </div>
+
+        <!-- Paper 20 -->
+        <div class="agenda-entry">
+          <span class="entry-time">12:50&ndash;13:40</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Chaining Tasks, Redefining Work: A Theory of AI Automation</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Mert Demirer</span><span class="affiliation">, Massachusetts Institute of Technology</span></div>
+            <div class="author-row"><span class="affiliation">Co-authors: John J. Horton, Nicole Immorlica, Brendan Lucier, Peyman Shahidi</span></div>
+          </div>
+        </div>
+
+        <div class="break-entry">13:40&ndash;14:40 &nbsp; Lunch</div>
+
+        <div class="session-header">Session XI: AI, Platforms, and Recommendations</div>
+
+        <!-- Paper 21 -->
+        <div class="agenda-entry">
+          <span class="entry-time">14:40&ndash;15:30</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">The Value of Personalized Recommendations: Evidence from Netflix</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Kevin Zielnicki</span><span class="affiliation">, Netflix</span></div>
+            <div class="author-row"><span class="affiliation">Co-authors: Guy Aridor, Aurelien Bibaut, Allen Tran, Winston Chou, Nathan Kallus</span></div>
+          </div>
+        </div>
+
+        <!-- Paper 22 -->
+        <div class="agenda-entry">
+          <span class="entry-time">15:30&ndash;16:20</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Generative AI in Equilibrium: Evidence from a Creative Goods Marketplace</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Samuel G. Goldberg</span><span class="affiliation">, Stanford University</span></div>
+            <div class="author-row"><span class="affiliation">Co-author: H. Tai Lam</span></div>
+          </div>
+        </div>
+
+        <!-- Paper 23 -->
+        <div class="agenda-entry">
+          <span class="entry-time">16:20&ndash;17:10</span>
+          <div class="entry-title-wrapper">
+            <span class="paper-title">Experimental Evidence That Conversational Artificial Intelligence Can Steer Consumer Behavior Without Detection</span>
+          </div>
+          <div class="paper-authors">
+            <div class="author-row"><span class="author-name">Tobias Werner</span><span class="affiliation">, University of Southampton</span></div>
+            <div class="author-row"><span class="author-name">Emilio Calvano</span><span class="affiliation">, LUISS University &amp; CEPR</span></div>
+            <div class="author-row"><span class="affiliation">Co-authors: Ivan Soraperra, David C. Parkes, Iyad Rahwan</span></div>
+          </div>
+        </div>
+
+        <div class="break-entry">19:00 &nbsp; Informal aperitivo</div>
+      </div>
+    </div>
+    <!-- Related -->
+    <div class="related-section">
+      <h2 class="related-title">Related</h2>
+      <div class="related-row">
+        <span class="related-row-label">JOURNAL</span>
+        <a class="related-row-link" href="https://www.wiley.com/en-us/Journal+of+Industrial+Economics-p-9780JRNL65003">Journal of Industrial Economics</a>
+      </div>
+      <div class="related-row">
+        <span class="related-row-label">NETWORK</span>
+        <a class="related-row-link" href="https://cepr.org">CEPR &ndash; Centre for Economic Policy Research</a>
+      </div>
+      <div class="related-row">
+        <span class="related-row-label">HOST</span>
+        <a class="related-row-link" href="https://www.luiss.edu">LUISS University, Rome</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subfooter -->
+  <div class="subfooter">
+    <div class="subfooter-inner">
+      <h2>About the Conference</h2>
+      <p>The CEPR-JIE Conference on Applied Industrial Organization is an annual conference organized in collaboration with the <a href="https://cepr.org">Centre for Economic Policy Research (CEPR)</a> and the <a href="https://www.wiley.com/en-us/Journal+of+Industrial+Economics-p-9780JRNL65003">Journal of Industrial Economics</a>. The 26th edition is hosted by LUISS University in Rome and funded by the European Research Council (ERC).</p>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-org">LUISS University &mdash; Rome, Italy</div>
+  <div class="footer-contact">
+    <p><a href="https://www.luiss.edu">www.luiss.edu</a></p>
+    <p>Viale Romania, 32<br>00197 Rome, Italy</p>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.luiss.edu">Homepage</a>
+    <a href="https://cepr.org">CEPR</a>
+    <a href="https://www.wiley.com/en-us/Journal+of+Industrial+Economics-p-9780JRNL65003">Journal of Industrial Economics</a>
+  </div>
+</footer>
+
+<a class="back-to-top" href="#" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">&#8593;</a>
+
+</body>
+</html>
