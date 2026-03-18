@@ -17,13 +17,14 @@ header{height:auto;min-height:90px;padding:16px 0;background:#fff;border-bottom:
 .org-logo-link{display:flex;align-items:center;text-decoration:none;line-height:1}
 .org-logo-link:hover{opacity:0.8}
 .org-logo-img{display:block;object-fit:contain}
-.luiss-logo{height:60px;width:auto;max-width:160px}
-.org-divider{width:1px;height:50px;background:#ccc;align-self:center;flex-shrink:0}
+.luiss-logo{height:56px;width:auto;max-width:150px}
+.erc-logo{height:56px;width:auto;max-width:120px}
+.cepr-logo{height:44px;width:auto;max-width:110px}
+.org-divider{width:1px;height:48px;background:#ccc;align-self:center;flex-shrink:0}
 .jie-text{font-family:Georgia,'Times New Roman',serif;font-size:11px;font-weight:700;color:#c0392b;letter-spacing:0.5px;text-transform:uppercase;line-height:1.4;text-align:left}
-.erc-text{font-family:Arial,sans-serif;font-size:14px;font-weight:900;color:#1a4a8a;letter-spacing:1px;text-transform:lowercase;background:#e8f0f8;padding:6px 10px;border-radius:3px}
-.cepr-text{font-family:Arial,sans-serif;font-size:18px;font-weight:900;color:#fff;background:#2a2ab5;padding:8px 12px;letter-spacing:1px;display:inline-block}
 .header-nav{display:flex;align-items:center;gap:16px;flex-shrink:0}
 .header-nav button{background:none;border:none;cursor:pointer;color:var(--luiss-blue);padding:4px}
+.sponsor-sub{font-family:var(--body-font);font-size:15px;font-weight:400;color:rgba(255,255,255,0.85);margin-top:10px;line-height:1.5}
 .content-wrap{max-width:calc(100% - 64px);margin:0 32px}
 .breadcrumb{margin:48px 0 24px;font-size:16px}
 .breadcrumb a{color:#000;text-decoration:none}
@@ -101,16 +102,16 @@ footer .footer-links a:hover{text-decoration:underline}
         <img src="download.png" alt="LUISS Università di Roma" class="org-logo-img luiss-logo">
       </a>
       <div class="org-divider"></div>
-      <a href="https://www.wiley.com/en-us/Journal+of+Industrial+Economics-p-9780JRNL65003" class="org-logo-link jie-link" title="The Journal of Industrial Economics">
+      <a href="https://www.wiley.com/en-us/Journal+of+Industrial+Economics-p-9780JRNL65003" class="org-logo-link" title="The Journal of Industrial Economics">
         <span class="jie-text">THE JOURNAL OF<br>INDUSTRIAL<br>ECONOMICS</span>
       </a>
       <div class="org-divider"></div>
-      <a href="https://erc.europa.eu" class="org-logo-link erc-link" title="ERC – European Research Council">
-        <span class="erc-text">erc</span>
+      <a href="https://erc.europa.eu" class="org-logo-link" title="ERC – European Research Council">
+        <img src="LOGO_ERC.png" alt="European Research Council" class="org-logo-img erc-logo">
       </a>
       <div class="org-divider"></div>
-      <a href="https://cepr.org" class="org-logo-link cepr-link" title="CEPR – Centre for Economic Policy Research">
-        <span class="cepr-text">CEPR</span>
+      <a href="https://cepr.org" class="org-logo-link" title="CEPR – Centre for Economic Policy Research">
+        <img src="cepr.png" alt="CEPR" class="org-logo-img cepr-logo">
       </a>
     </div>
     <div class="header-nav">
@@ -162,9 +163,9 @@ footer .footer-links a:hover{text-decoration:underline}
         </a>
       </div>
       <div class="sponsor-banner">
-        <h2>Co-Funded by the European Research Council (ERC)</h2>
-                <h2>Funded by the European Research Council (ERC)</h2>
-      </div>
+      <h2>Funded by the European Research Council (ERC)</h2>
+      <p class="sponsor-sub">Co-funded by the Journal of Industrial Economics, CEPR, and the Department of Economics and Financial Markets at LUISS University</p>
+    </div>
       <p class="format-notice">Format: 35 minutes for the authors, 10 minutes for the discussants, 5 minutes for general Q&amp;A</p>
     </div>
     <!-- AGENDA -->
