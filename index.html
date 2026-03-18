@@ -14,17 +14,17 @@ a:hover{text-decoration:underline}
 header{height:110px;padding:16px 0;background:#fff;border-bottom:1px solid #e0e0e0}
 .header-inner{max-width:calc(100% - 64px);margin:0 32px;display:flex;align-items:center;justify-content:space-between;height:100%}
 .org-logos{display:flex;align-items:center;gap:16px}
-.org-logo-link{display:flex;align-items:center;text-decoration:none}
+.org-logo-link{display:flex;align-items:center;text-decoration:none;line-height:0}
 .org-logo-link:hover{opacity:0.85}
 .org-logo-img{display:block;object-fit:contain}
 .luiss-logo{height:64px;width:auto}
-.org-logo-pdf{display:block;border:none;overflow:hidden;pointer-events:none}
+.org-logo-embed{display:block;border:none;overflow:hidden;pointer-events:none}
 .jie-logo{height:64px;width:120px}
 .erc-logo{height:64px;width:80px}
 .cepr-logo{height:64px;width:100px}
-.org-divider{width:1px;height:50px;background:var(--luiss-blue);opacity:0.25}
+.org-divider{width:1px;height:50px;background:var(--luiss-blue);opacity:0.25;align-self:center}
 .org-partner{font-family:var(--body-font);font-size:12px;font-weight:700;color:var(--luiss-blue);letter-spacing:0.5px;text-transform:uppercase;line-height:1.3}
-.header-nav{display:flex;align-items:center;gap:16px}
+.header-nav{display:flex;align-items:center;gap:16px;flex-shrink:0}
 .header-nav button{background:none;border:none;cursor:pointer;color:var(--luiss-blue);padding:4px}
 .content-wrap{max-width:calc(100% - 64px);margin:0 32px}
 .breadcrumb{margin:48px 0 24px;font-size:16px}
@@ -99,26 +99,20 @@ footer .footer-links a:hover{text-decoration:underline}
 <header>
   <div class="header-inner">
     <div class="org-logos">
-      <a href="https://www.luiss.edu" class="org-logo-link">
+      <a href="https://www.luiss.edu" class="org-logo-link" title="LUISS Università di Roma">
         <img src="download.png" alt="LUISS Università di Roma" class="org-logo-img luiss-logo">
       </a>
       <div class="org-divider"></div>
-      <a href="https://www.wiley.com/en-us/Journal+of+Industrial+Economics-p-9780JRNL65003" class="org-logo-link">
-        <object data="jie%20logo.pdf" type="application/pdf" class="org-logo-pdf jie-logo" aria-label="The Journal of Industrial Economics">
-          <span class="org-partner">Journal of Industrial<br>Economics</span>
-        </object>
+      <a href="https://www.wiley.com/en-us/Journal+of+Industrial+Economics-p-9780JRNL65003" class="org-logo-link" title="The Journal of Industrial Economics">
+        <embed src="jie%20logo.pdf" type="application/pdf" class="org-logo-embed jie-logo">
       </a>
       <div class="org-divider"></div>
-      <a href="https://erc.europa.eu" class="org-logo-link">
-        <object data="erclogo.pdf" type="application/pdf" class="org-logo-pdf erc-logo" aria-label="ERC – European Research Council">
-          <span class="org-partner">ERC</span>
-        </object>
+      <a href="https://erc.europa.eu" class="org-logo-link" title="ERC – European Research Council">
+        <embed src="erclogo.pdf" type="application/pdf" class="org-logo-embed erc-logo">
       </a>
       <div class="org-divider"></div>
-      <a href="https://cepr.org" class="org-logo-link">
-        <object data="cepr%20logo.pdf" type="application/pdf" class="org-logo-pdf cepr-logo" aria-label="CEPR">
-          <span class="org-partner">CEPR</span>
-        </object>
+      <a href="https://cepr.org" class="org-logo-link" title="CEPR">
+        <embed src="cepr%20logo.pdf" type="application/pdf" class="org-logo-embed cepr-logo">
       </a>
     </div>
     <div class="header-nav">
